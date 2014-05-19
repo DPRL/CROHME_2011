@@ -1,0 +1,16 @@
+FUNC \cos \sin \phi
+FRAC -
+SQRT \sqrt
+OP + - \pm
+EQ = \neq \leq \lt
+OPENP (
+CLOSEP )
+SYMBOL a b c d e i k n x y z 0 1 2 3 4 5 6 7 8 9 \phi \pi \theta
+START \cos \sin - \sqrt + - \pm ( a b c d e i k n x y z 0 1 2 3 4 5 6 7 8 9 \phi \pi \theta
+
+##LAYOUT
+CENTERED a c e n x z \phi
+DESCENDER y 
+ASCENDER b d i k 0 1 2 3 4 5 6 7 8 9 \theta \pi   
+NOSUPERSUB + - \pm = \neq \leq \lt ( ) \cos \sin
+ROOT \sqrt

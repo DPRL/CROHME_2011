@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{AD755C82-B668-4CB0-8D80-C2101BB19B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lexer", "Lexer\Lexer.csproj", "{CA2C0377-1B80-4FF0-8D2D-C342B962F676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{E9808895-42B2-4D86-9AB1-8B5500E834A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{5EE26340-53A0-4625-8588-48D00EF0A46D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserTest", "ParserTest\ParserTest.csproj", "{80F007E5-356C-4EFF-9930-B1BF2AD91F72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adjacency_stats", "adjacency_stats\adjacency_stats.csproj", "{248C5F69-BA8B-4768-BB98-F3B8F5077219}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "classify", "classify\classify.csproj", "{354EAB56-330C-4365-A248-93BCD55FFB15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{248C5F69-BA8B-4768-BB98-F3B8F5077219}.Debug|x86.ActiveCfg = Debug|x86
+		{248C5F69-BA8B-4768-BB98-F3B8F5077219}.Debug|x86.Build.0 = Debug|x86
+		{248C5F69-BA8B-4768-BB98-F3B8F5077219}.Release|x86.ActiveCfg = Release|x86
+		{248C5F69-BA8B-4768-BB98-F3B8F5077219}.Release|x86.Build.0 = Release|x86
+		{354EAB56-330C-4365-A248-93BCD55FFB15}.Debug|x86.ActiveCfg = Debug|x86
+		{354EAB56-330C-4365-A248-93BCD55FFB15}.Debug|x86.Build.0 = Debug|x86
+		{354EAB56-330C-4365-A248-93BCD55FFB15}.Release|x86.ActiveCfg = Release|x86
+		{354EAB56-330C-4365-A248-93BCD55FFB15}.Release|x86.Build.0 = Release|x86
+		{5EE26340-53A0-4625-8588-48D00EF0A46D}.Debug|x86.ActiveCfg = Debug|x86
+		{5EE26340-53A0-4625-8588-48D00EF0A46D}.Debug|x86.Build.0 = Debug|x86
+		{5EE26340-53A0-4625-8588-48D00EF0A46D}.Release|x86.ActiveCfg = Release|x86
+		{5EE26340-53A0-4625-8588-48D00EF0A46D}.Release|x86.Build.0 = Release|x86
+		{80F007E5-356C-4EFF-9930-B1BF2AD91F72}.Debug|x86.ActiveCfg = Debug|x86
+		{80F007E5-356C-4EFF-9930-B1BF2AD91F72}.Debug|x86.Build.0 = Debug|x86
+		{80F007E5-356C-4EFF-9930-B1BF2AD91F72}.Release|x86.ActiveCfg = Release|x86
+		{80F007E5-356C-4EFF-9930-B1BF2AD91F72}.Release|x86.Build.0 = Release|x86
+		{AD755C82-B668-4CB0-8D80-C2101BB19B0D}.Debug|x86.ActiveCfg = Debug|x86
+		{AD755C82-B668-4CB0-8D80-C2101BB19B0D}.Debug|x86.Build.0 = Debug|x86
+		{AD755C82-B668-4CB0-8D80-C2101BB19B0D}.Release|x86.ActiveCfg = Release|x86
+		{AD755C82-B668-4CB0-8D80-C2101BB19B0D}.Release|x86.Build.0 = Release|x86
+		{CA2C0377-1B80-4FF0-8D2D-C342B962F676}.Debug|x86.ActiveCfg = Debug|x86
+		{CA2C0377-1B80-4FF0-8D2D-C342B962F676}.Debug|x86.Build.0 = Debug|x86
+		{CA2C0377-1B80-4FF0-8D2D-C342B962F676}.Release|x86.ActiveCfg = Release|x86
+		{CA2C0377-1B80-4FF0-8D2D-C342B962F676}.Release|x86.Build.0 = Release|x86
+		{E9808895-42B2-4D86-9AB1-8B5500E834A9}.Debug|x86.ActiveCfg = Debug|x86
+		{E9808895-42B2-4D86-9AB1-8B5500E834A9}.Debug|x86.Build.0 = Debug|x86
+		{E9808895-42B2-4D86-9AB1-8B5500E834A9}.Release|x86.ActiveCfg = Release|x86
+		{E9808895-42B2-4D86-9AB1-8B5500E834A9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Lexer\Lexer.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/x-csharp
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.FileWidth = 120
+		$4.TabWidth = 6
+		$4.EolMarker = Unix
+		$4.inheritsSet = Mono
+		$4.inheritsScope = text/plain
+		$4.scope = text/plain
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

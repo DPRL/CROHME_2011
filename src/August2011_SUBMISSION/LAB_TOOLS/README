@@ -1,0 +1,96 @@
+LAB_TOOLS: README
+
+CONTENTS
+---
+1. INTRODUCTION.
+2. FILE AND FOLDER DESCRIPTIONS.
+3. SCRIPT USAGE.
+	3a. SCRIPT PARAMETERS.
+	3b. SYSTEM PARAMETERS.
+	3c. RUNNING THE SCRIPT AND UNDERSTANDING OUTPUT.
+
+
+1. INTRODUCTION.
+
+This folder contains, in addition to a compiled version of the system
+entry point, a script for running multiple input files in batch.
+
+
+2. FILE AND FOLDER DESCRIPTIONS.
+
+	- Release
+		Compiled executable that is the main entry point for running files on
+		the system. Note that this CAN be called directly but a preferable
+		method is to use the scripts provided.
+	
+	- README
+		This file.
+	
+	- runsys.batch.sh
+		The script for running multiple input files in batch. Further
+		information on using this file can be found in following section(s).
+
+		
+3. SCRIPT USAGE.
+
+This script was designed to be easy to use and provide a high level of control
+over system parameters.
+
+3a. SCRIPT PARAMETERS.
+
+The script takes two parameters: the first is required, the second optional:
+
+	$ ./runsys.batch.sh INPUTFILELIST [OUTPUTDIRECTORY]
+	
+	- INPUTFILELIST is a plain-text file that has the names of input files,
+	  one file per line. It is suggested that the input files be moved to this
+	  directory (i.e. the same directory as the script) and then just the raw
+	  file names listed in this file, without any path prefix.
+	
+	- OUTPUTDIRECTORY is the path to the desired output directory. All output
+	  from the run will be put here. If it is not provided, a folder in the
+	  current directory will be created; the name will be a time/datestamp.
+	  Either way, the script will report the output directory for reference.
+
+3b. SYSTEM PARAMETERS.
+
+System parameters can be set with the variables at the top of the script (above
+the "do not edit" warning):
+
+	- GRAMMARFILE is the name of the grammar file. Assumed to be in the
+	  Release/ directory.
+	
+	- STATSFILE is the name of the (layout/adjacency) statistics file. Assumed
+	  to be in the Release/ directory.
+	
+	- PROCTIMEOUT is the timeout to set for a single thread. Any file for which
+	  system execution time exceeds this value will be aborted and reported as
+	  such.
+	
+	- TOPN is the value for the maximum number of classification possibilities
+	  to consider. Note that the system's run time increases greatly with
+	  higher values.
+	
+	- PROBTHRESHOLD is the value at which to prune classification results
+	  (i.e. potential classifications with a probability less than this value
+	  will be immediately discarded). Set this to 0 for no pruning.
+	
+	- RUNATONCE is the number of files to run at once (i.e. number of files
+	  in one "batch"). Note that the system tends to perform poorly if this
+	  value is too high; recommended values are RUNATONCE <= ~50. Reduce this
+	  value if batches are not completing due to memory issues.
+	  
+	- THREADS is the number of threads to utilize when running a single batch.
+	  If RUNATONCE is sufficiently small, this number will optimally equal
+	  RUNATONCE. It is suggested that THREADS not exceed 10, though this may
+	  vary depending on the specifications of the machine running the system.
+
+3c. RUNNING THE SCRIPT AND UNDERSTANDING OUTPUT.
+
+Invoke the script as shown above (under "3a. SCRIPT PARAMETERS").
+
+In the output directory, a folder will be created for each batch, named with
+the batch number (e.g. "1", "2", etc.). In each batch folder will be the list
+of files in that batch (".currentrunlist") as well as the output inkml files
+when they are produced. Additionally, stdout and stderr of the classification
+executable are redirected to "classify.out" and "classify.err", respectively.

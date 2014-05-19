@@ -1,0 +1,81 @@
+SUBMISSION: README
+
+CONTENTS
+---
+1. INTRODUCTION.
+2. FILE AND FOLDER DESCRIPTIONS.
+3. SCRIPT USAGE.
+	3a. SCRIPT PARAMETERS.
+	3b. SYSTEM PARAMETERS.
+	3c. RUNNING THE SCRIPT AND UNDERSTANDING OUTPUT.
+
+
+1. INTRODUCTION.
+
+This folder contains, in addition to a compiled version of the system
+entry point, a script for running a single input file through the system.
+
+
+2. FILE AND FOLDER DESCRIPTIONS.
+
+	- Release
+		Compiled executable that is the main entry point for running files on
+		the system. Note that this CAN be called directly but a preferable
+		method is to use the scripts provided.
+	
+	- README
+		This file.
+	
+	- runsys.sh
+		The script for running a single input file through the system. Further
+		information on using this file can be found in following section(s).
+
+		
+3. SCRIPT USAGE.
+
+This script was designed to be easy to use and provide a high level of control
+over system parameters.
+
+3a. SCRIPT PARAMETERS.
+
+The script takes two parameters; they are both required:
+
+	$ ./runsys.batch.sh INPUTFILE OUTPUTFILE
+	
+	- INPUTFILE is the name of the input file to be run.
+	
+	- OUTPUTFILE is the name of the file to which the results should be saved.
+
+3b. SYSTEM PARAMETERS.
+
+System parameters can be set with the variables at the top of the script (above
+the "do not edit" warning):
+
+	- GRAMMARFILE is the name of the grammar file. Assumed to be in the
+	  Release/ directory.
+	
+	- STATSFILE is the name of the (layout/adjacency) statistics file. Assumed
+	  to be in the Release/ directory.
+	
+	- PROCTIMEOUT is the timeout to set for a single thread. Any file for which
+	  system execution time exceeds this value will be aborted and reported as
+	  such.
+	
+	- TOPN is the value for the maximum number of classification possibilities
+	  to consider. Note that the system's run time increases greatly with
+	  higher values.
+	
+	- PROBTHRESHOLD is the value at which to prune classification results
+	  (i.e. potential classifications with a probability less than this value
+	  will be immediately discarded). Set this to 0 for no pruning.
+
+3c. RUNNING THE SCRIPT AND UNDERSTANDING OUTPUT.
+
+Invoke the script as shown above (under "3a. SCRIPT PARAMETERS").
+
+The system will be invoked and the result will be saved to the output file.
+
+Note that by default the system's output streams are not redirected and it
+will produce output at the end that may or may not be useful. If this
+information is to be captured, the script invoker will need to redirect
+output manually.

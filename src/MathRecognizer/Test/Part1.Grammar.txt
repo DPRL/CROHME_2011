@@ -1,0 +1,38 @@
+﻿GRAMMAR
+	## Non-terminals to Non-terminals
+	S -> SF *EQ SF | SF
+	SF -> *OP E | E
+	E -> F *OP E | F
+	PAR -> *OPENP E *CLOSEP
+	F -> T F | T | *FRAC
+	T -> *FUNC *OPENP F *CLOSEP | *FUNC *SYMBOL | PAR | SQRT | *SYMBOL
+
+	## Non-terminals to Terminals
+	*OPENP -> (
+	*CLOSEP -> )
+	*SYMBOL -> a | b | c | d | e | i | k | n | x | y | z | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | \phi | \pi | \theta
+	*FRAC -> -
+	*EQ -> \neq | \leq | \lt | =
+	*OP -> + | - | \pm
+	*FUNC -> \cos | \sin | \phi
+
+LAYOUT
+	## Region List must be called "Regions"
+	Regions := SUPER SUB ABOVE BELOW
+
+	## prefixes for regions: _required, @optional
+	## a set of Region/Non-terminal pairs is a RegionLayout
+	## LayoutClasses map to RegionLayouts
+	## Each of the terminals belongs to at least one LayoutClass
+	
+	Ascender -> @SUPER E | @SUB E
+		
+		Ascender := b d i k 0 1 2 3 4 5 6 7 8 9 \theta \pi
+	Centered -> @SUPER E | @SUB E
+		Centered := a c e n x z \phi \sqrt 
+	Descender -> @SUPER E | @SUB E
+		Descender := y
+	Fraction -> _ABOVE E _BELOW E
+		Fraction := -
+	NoSuperSub ->
+		NoSuperSub := + - \pm = \neq \leq \lt ( ) \cos \sin

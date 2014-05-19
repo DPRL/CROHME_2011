@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9808895-42B2-4D86-9AB1-8B5500E834A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DataStructures</RootNamespace>
+    <AssemblyName>DataStructures</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Grammar.cs" />
+    <Compile Include="InkML.cs" />
+    <Compile Include="LBT.cs" />
+    <Compile Include="Stroke.cs" />
+    <Compile Include="Segment.cs" />
+    <Compile Include="Classification.cs" />
+    <Compile Include="ClassificationResult.cs" />
+    <Compile Include="HighlightRender.cs" />
+    <Compile Include="AABB.cs" />
+    <Compile Include="Vector2.cs" />
+    <Compile Include="LexerResult.cs" />
+    <Compile Include="PartitionNode.cs" />
+    <Compile Include="PartitionResult.cs" />
+    <Compile Include="MathExpression.cs" />
+    <Compile Include="SymbolClass.cs" />
+    <Compile Include="Tuple.cs" />
+    <Compile Include="ParseTreeNode.cs" />
+    <Compile Include="RelationTreeNode.cs" />
+    <Compile Include="ParseState.cs" />
+    <Compile Include="SymbolTreeNode.cs" />
+    <Compile Include="ValidParseTree.cs" />
+    <Compile Include="PreviousSymbol.cs" />
+    <Compile Include="QDC.cs" />
+    <Compile Include="Matrix.cs" />
+    <Compile Include="ConfusionMatrix.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml.Linq">
+    </Reference>
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+</Project>

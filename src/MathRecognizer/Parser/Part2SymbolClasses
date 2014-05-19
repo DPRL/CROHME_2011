@@ -1,0 +1,21 @@
+FUNCLOG \log
+FUNCTRIG \cos \sin \tan
+HLINE -
+SQRT \sqrt
+OPSUM + - \pm
+EQ = \neq
+INEQ \leq \lt \geq
+OPENP (
+CLOSEP )
+SYMBOL a b c d e i j k n x y z A B C F 0 1 2 3 4 5 6 7 8 9 \phi \pi \theta \alpha \beta \gamma \infty
+ARROW \rightarrow
+INDEXED \sum \lim \int
+DOTS \ldots 
+FACTORIAL !
+
+##LAYOUT
+CENTERED a c e n x z \phi \sqrt \div \times \alpha \gamma \rightarrow \sum \lim \infty \geq \int
+DESCENDER y j
+ASCENDER b d i k A B C F 0 1 2 3 4 5 6 7 8 9 \theta \pi \log \tan \beta !
+NOSUPERSUB + - \pm = \neq \leq \lt ( ) \cos \sin \ldots 
+

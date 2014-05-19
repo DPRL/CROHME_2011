@@ -1,0 +1,74 @@
+﻿#############
+GRAMMAR
+#############
+
+S -> E *INEQ E *INEQ E |  E OPEQ E |  E
+E -> *OPSUM BLSUM | BLSUM
+OPEQ -> *EQ | *INEQ
+BLSUM -> F *OPSUM BLSUM |  *DOTS *OPSUM BLSUM | F | *DOTS
+F -> T *OPPR F  | T F | T
+T -> *FRAC | *INT T | *LIM T | *SQRT | *SUM T | FUNC PAR | FUNC SYMBOL | PAR | SYMBOL *EXCL | SYMBOL
+
+## OLD WITHOUT LIMIT BELOW
+## T -> *FRAC | *INT T | *SQRT | *SUM T | FUNC PAR | FUNC SYMBOL | PAR | SYMBOL *EXCL | SYMBOL
+
+FUNC -> *FUNCLOG | *FUNCTRIGO 
+PAR -> *OPENP E *CLOSEP
+SUMBELOW -> SYMBOL *OPEQ E | SYMBOL
+LIMBELOW -> SYMBOL *ARROW E | SYMBOL
+SYMBOL -> *DIGIT | *LETTER | *OTHER
+
+#### TERMINAL-GENERATING NON-TERMINALS ########
+*LETTER -> a|b|c|d|e|A|B|C|F|i|j|k|n|x|y|z
+*DIGIT -> 0|1|2|3|4|5|6|7|8|9
+*OTHER -> \alpha|\beta|\gamma|\phi|\pi|\theta|\infty
+*ARROW -> \rightarrow
+*EXCL -> !
+*DOTS -> \cdots 
+*EQ -> = | \neq
+*INEQ -> \leq | \lt | \geq
+*OPSUM -> + | - | \pm
+*OPPR -> \div | \times
+*SUM -> \sum
+*INT -> \int
+*LIM -> \lim
+*FUNCLOG -> \log
+*FUNCTRIGO -> \sin | \cos | \tan
+*OPENP -> (
+*CLOSEP -> )
+*FRAC -> -
+
+###############
+LAYOUT
+###############
+Regions := SUPER SUBSC ABOVE BELOW CONTAINS
+
+# SYMBOL classes
+# Grammar allows SYMBOLs to have 1) a superscript, 2) a subscript, or 3) neither!
+Ascender -> @SUPER E | @SUBSC E
+	Ascender := b d i k A B C F 0 1 2 3 4 5 6 7 8 9 \theta \pi \beta !
+Descender -> @SUPER E | @SUBSC E
+	Descender := y \gamma
+Centered -> @SUPER E | @SUBSC E
+	Centered := a c e n x z j \phi \int \sum \alpha \infty \sum \int \lim \log
+NoSuperSub ->
+	NoSuperSub := + - \pm = \neq \leq \lt \geq ( ) \cos \sin \tan \rightarrow \cdots \div \times
+
+# Layout structures
+*FRAC -> _ABOVE E _BELOW E
+	*FRAC := -
+*SQRT -> _CONTAINS E
+	*SQRT := \sqrt
+*FUNCLOG -> @SUBSC SYMBOL
+	*FUNCLOG := \log
+*FUNCTRIGO -> @SUPER SYMBOL
+	*FUNCTRIG := \cos \sin \tan
+*LIM -> @SUBSC LIMBELOW
+	*LIM := \lim
+*INT -> _SUBSC SYMBOL _SUPER SYMBOL
+	*INT := \int
+*SUM -> @SUBSC SUMBELOW | _SUBSC SUMBELOW _SUPER SYMBOL | _BELOW SUMBELOW _ABOVE E
+	*SUM := \sum
+##  (NOTE: close parens can always have superscripts: not true in orig. grammar)
+*CLOSEP -> @SUPER E
+	*CLOSEP := )
